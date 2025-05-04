@@ -73,7 +73,7 @@
     /* Left-aligned section */
     .left-section {
       position: absolute;
-      bottom: 100px; /* Move it closer to the bottom-middle, but fully visible */
+      bottom: 200px; /* Move it higher to avoid collision with the GIF */
       left: 20px; /* Align to the left */
       text-align: left; /* Align text content to the left */
       max-width: 300px; /* Restrict width for readability */
@@ -113,7 +113,7 @@
       height: auto;
     }
 
-    /* Responsive adjustments */
+    /* Responsive adjustments for mobile */
     @media (max-width: 768px) {
       h1 {
         font-size: 1.5em;
@@ -126,14 +126,36 @@
 
       .gif-container {
         width: 100px;
+        bottom: 10px; /* Move it closer to the bottom */
       }
 
       .left-section {
-        max-width: 100%;
+        bottom: 250px; /* Move it higher to avoid collision with the GIF */
+        max-width: 90%; /* Allow it to scale with the screen */
       }
 
       .paragraph {
         font-size: 0.9em; /* Reduce font size for smaller screens */
+        padding: 8px; /* Add padding to reduce border size */
+      }
+    }
+
+    /* Additional adjustments for very small screens */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.2em;
+      }
+
+      .gif-container {
+        width: 80px;
+      }
+
+      .paragraph {
+        font-size: 0.8em;
+      }
+
+      .left-section {
+        bottom: 300px;
       }
     }
   </style>

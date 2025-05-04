@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Welcome</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* General body styling */
+    body {
+      background-color: black;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    /* Flex container for layout */
+    #container {
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items horizontally */
+      justify-content: space-between; /* Distribute items with space */
+      height: 100vh; /* Full viewport height */
+      padding: 20px;
+      position: relative; /* Allow child elements to use absolute positioning if needed */
+    }
+
+    /* Top-middle heading */
+    h1 {
+      color: crimson;
+      font-family: 'Tagesschrift', Arial;
+      text-align: center;
+      margin: 0;
+      position: absolute;
+      top: 10px; /* Place at the top */
+      left: 50%; /* Center horizontally */
+      transform: translateX(-50%);
+    }
+
+    /* Circular image at the top-right corner */
+    .circle {
+      position: absolute;
+      top: 20px; /* Place it near the top */
+      right: 20px; /* Align it to the right edge */
+      width: 100px;
+      height: 100px;
+      border-radius: 50%; /* Make the image circular */
+      overflow: hidden;
+    }
+
+    .circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensure the image scales properly */
+    }
+
+    /* Circular image at the top-left corner */
+    .circle-2 {
+      position: absolute;
+      top: 20px; /* Place it near the top */
+      left: 20px; /* Align it to the left edge */
+      width: 100px;
+      height: 100px;
+      border-radius: 50%; /* Make the image circular */
+      overflow: hidden;
+    }
+
+    .circle-2 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensure the image scales properly */
+    }
+
+    /* Left-aligned section */
+    .left-section {
+      position: absolute;
+      bottom: 100px; /* Move it closer to the bottom-middle, but fully visible */
+      left: 20px; /* Align to the left */
+      text-align: left; /* Align text content to the left */
+      max-width: 300px; /* Restrict width for readability */
+    }
+
+    .ligma {
+      font-family: 'Playwrite RO', Arial;
+      color: green;
+      margin-bottom: 10px;
+    }
+
+    /* Paragraph styling with responsive border */
+    .paragraph {
+      font-family: 'Roboto Mono', Arial;
+      color: white;
+      margin: 0;
+      padding: 10px;
+      border: 3px dashed white; /* Bigger border size */
+      width: auto; /* Allow the border to fit the text */
+      display: inline-block; /* Ensure the border wraps around the content */
+      box-sizing: border-box; /* Include padding and border in width calculation */
+      max-width: 100%; /* Ensure it doesn't overflow on smaller screens */
+    }
+
+    /* Bottom-center GIF */
+    .gif-container {
+      position: absolute;
+      bottom: 20px; /* Align to the bottom */
+      left: 50%; /* Center horizontally */
+      transform: translateX(-50%); /* Adjust for perfect centering */
+      width: 150px;
+      height: auto;
+    }
+
+    .gif-container img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.5em;
+      }
+
+      .circle, .circle-2 {
+        width: 80px;
+        height: 80px;
+      }
+
+      .gif-container {
+        width: 100px;
+      }
+
+      .left-section {
+        max-width: 100%;
+      }
+
+      .paragraph {
+        font-size: 0.9em; /* Reduce font size for smaller screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <!-- Top-middle heading -->
+    <h1>Welcome to my amazing web page</h1>
+
+    <!-- Circular image at the top-right corner -->
+    <div class="circle">
+      <img src="img.jpg" alt="Circular Image">
+    </div>
+
+    <!-- Circular image at the top-left corner -->
+    <div class="circle-2">
+      <img src="imag.jpg" alt="Left Circular Image">
+    </div>
+
+    <!-- Left-aligned section -->
+    <div class="left-section">
+      <div class="ligma">Who Am I?</div>
+      <div class="paragraph">
+        <p>I am dihojpiutyry efueygtfu izeugfiezo iezyfgzhetug uygtfrtgyhuijouty iezyfze fiuzetf iegfyuze iyttuqiyu
+        qzregfor i niezyfugdrtfghuijkofghjklogfgiozufdio uozyefou qgfyerg uoytf uezg gfutz egfuuy zigf iuetGF IUT REUGF
+        EUORGU RLGUYEUOR GUOERGUFEURYGFEROGFI ZZZZZZZZZZZZZZZZZZZZZZZZZGRUZGRUFZRUGUOR GFEZRUGEIURGFIEZRGFUER EIUGFIERG
+        IUERG UE FG EZ UGUGUEG IUGUGR GQAGYGUER GYUOERYGURY EUGY UG RGYRUGYUERYGRUK ZRGVYZRGYRZ YFAZYIYF IUGIURG
+        ZEFYUEZTFOTQZF EZEFZIYGRIZUEQUFIY</p>
+      </div>
+    </div>
+
+    <!-- Bottom-center GIF -->
+    <div class="gif-container">
+      <img src="gif.gif" alt="Animated GIF">
+    </div>
+  </div>
+</body>
+</html>

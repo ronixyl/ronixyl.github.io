@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Welcome</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en"><head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&amp;display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&amp;display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&amp;display=swap" rel="stylesheet">
   <style>
     /* General body styling */
     body {
@@ -73,24 +78,24 @@
     /* Left-aligned section */
     .left-section {
       position: absolute;
-      bottom: 200px; /* Move it higher to avoid collision with the GIF */
-      left: 20px; /* Align to the left */
+      bottom: 50px; /* Stick to the bottom with a margin */
+      left: 30px; /* Move it to the utmost left with a bit of margin */
       text-align: left; /* Align text content to the left */
       max-width: 300px; /* Restrict width for readability */
     }
 
     .ligma {
-      font-family: 'Playwrite RO', Arial;
+      font-family: Playwrite RO, Arial;
       color: green;
       margin-bottom: 10px;
     }
 
     /* Paragraph styling with responsive border */
     .paragraph {
-      font-family: 'Roboto Mono', Arial;
+      font-family: Roboto Mono, Arial;
       color: white;
       margin: 0;
-      padding: 10px;
+      padding: 15px; /* Increased padding for better spacing */
       border: 3px dashed white; /* Bigger border size */
       width: auto; /* Allow the border to fit the text */
       display: inline-block; /* Ensure the border wraps around the content */
@@ -130,13 +135,14 @@
       }
 
       .left-section {
-        bottom: 250px; /* Move it higher to avoid collision with the GIF */
+        left: 20px; /* Move further left for smaller screens */
+        bottom: 70px; /* Adjust bottom space for smaller screens */
         max-width: 90%; /* Allow it to scale with the screen */
       }
 
       .paragraph {
         font-size: 0.9em; /* Reduce font size for smaller screens */
-        padding: 8px; /* Add padding to reduce border size */
+        padding: 12px; /* Adjust padding for smaller screens */
       }
     }
 
@@ -155,7 +161,8 @@
       }
 
       .left-section {
-        bottom: 300px;
+        left: 15px; /* Ensure it doesn’t touch the edge */
+        bottom: 100px; /* Adjust bottom for very small screens */
       }
     }
   </style>
@@ -179,11 +186,14 @@
     <div class="left-section">
       <div class="ligma">Who Am I?</div>
       <div class="paragraph">
-        <p>I am dihojpiutyry efueygtfu izeugfiezo iezyfgzhetug uygtfrtgyhuijouty iezyfze fiuzetf iegfyuze iyttuqiyu
-        qzregfor i niezyfugdrtfghuijkofghjklogfgiozufdio uozyefou qgfyerg uoytf uezg gfutz egfuuy zigf iuetGF IUT REUGF
-        EUORGU RLGUYEUOR GUOERGUFEURYGFEROGFI ZZZZZZZZZZZZZZZZZZZZZZZZZGRUZGRUFZRUGUOR GFEZRUGEIURGFIEZRGFUER EIUGFIERG
-        IUERG UE FG EZ UGUGUEG IUGUGR GQAGYGUER GYUOERYGURY EUGY UG RGYRUGYUERYGRUK ZRGVYZRGYRZ YFAZYIYF IUGIURG
-        ZEFYUEZTFOTQZF EZEFZIYGRIZUEQUFIY</p>
+        <p>I am a young moroccan muslim guy.
+          I'm learning web development especially with Python, HTML and CSS and of course the usage of git.
+         I talk three languages and am starting the process of learning a fourth one.
+         The three that I already am capable of using are: Arabic, English and French
+         As for the one I'm learning it's Deutsch.
+         I'm really instersted in web design and graphic design.
+         I'm a mobile player.
+         I still don't have experience in the industrial world nor that I think I have the skill to do so. </p>
       </div>
     </div>
 
@@ -192,5 +202,7 @@
       <img src="gif.gif" alt="Animated GIF">
     </div>
   </div>
-</body>
-</html>
+<!-- Code injected by live-server -->
+
+
+</body></html>

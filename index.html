@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Amazing Web Page</title>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&amp;display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&display=swap" rel="stylesheet">
+
   <style>
     /* General body styling */
     body {
@@ -15,64 +20,57 @@
       color: white;
     }
 
-    /* Flex container for layout */
+    /* Container for layout */
     #container {
-      display: flex;
-      flex-direction: column; /* Stack items vertically */
-      align-items: center; /* Center items horizontally */
-      justify-content: space-between; /* Distribute items with space */
+      position: relative; /* Enable absolute positioning for child elements */
       height: 100vh; /* Full viewport height */
-      padding: 20px;
-      position: relative; /* Allow child elements to use absolute positioning if needed */
+      width: 100%; /* Full width */
     }
 
     /* Top-middle heading */
     h1 {
       color: crimson;
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       text-align: center;
       margin: 0;
-      position: absolute;
-      top: 10px; /* Place at the top */
-      left: 50%; /* Center horizontally */
-      transform: translateX(-50%);
+      padding-top: 20px;
     }
 
     /* Left-aligned section */
     .left-section {
       position: absolute;
-      bottom: 50px; /* Stick to the bottom with a margin */
-      left: 30px; /* Move it to the utmost left with a bit of margin */
-      text-align: left; /* Align text content to the left */
-      max-width: 300px; /* Restrict width for readability */
+      bottom: 80px; /* Lower the section */
+      left: 40px; /* Add margin to the left for better spacing */
+      text-align: left;
+      max-width: 350px; /* Slightly wider paragraph */
     }
 
     .Zenith {
-      font-family: Playwrite RO, Arial;
+      font-family: 'Playwrite RO', Arial, sans-serif;
       color: green;
       margin-bottom: 10px;
     }
 
-    /* Paragraph styling with responsive border */
+    /* Paragraph styling */
     .paragraph {
-      font-family: Roboto Mono, Arial;
+      font-family: 'Roboto Mono', Arial, sans-serif;
       color: white;
       margin: 0;
-      padding: 15px; /* Increased padding for better spacing */
-      border: 3px dashed white; /* Bigger border size */
-      width: auto; /* Allow the border to fit the text */
-      display: inline-block; /* Ensure the border wraps around the content */
-      box-sizing: border-box; /* Include padding and border in width calculation */
-      max-width: 100%; /* Ensure it doesn't overflow on smaller screens */
+      padding: 15px;
+      border: 3px dashed white;
+      display: inline-block;
+      box-sizing: border-box;
+      width: 100%; /* Make it responsive */
+      max-width: 320px; /* Wider for better readability */
     }
 
     /* Bottom-center GIF */
     .gif-container {
-      position: absolute;
-      bottom: 20px; /* Align to the bottom */
+      position: absolute; /* Position it within the container */
+      bottom: 20px; /* Proper bottom alignment */
       left: 50%; /* Center horizontally */
-      transform: translateX(-50%); /* Adjust for perfect centering */
-      width: 150px;
+      transform: translateX(-50%); /* Perfect horizontal centering */
+      width: 120px; /* Smaller GIF size */
       height: auto;
     }
 
@@ -81,47 +79,46 @@
       height: auto;
     }
 
-    /* Responsive adjustments for mobile */
+    /* Responsive adjustments for tablets */
     @media (max-width: 768px) {
       h1 {
         font-size: 1.5em;
       }
 
-
-      .gif-container {
-        width: 100px;
-        bottom: 10px; /* Move it closer to the bottom */
+      .left-section {
+        bottom: 180px; /* Push it further up */
+        left: 30px; /* Slightly adjust left margin */
       }
 
-      .left-section {
-        left: 20px; /* Move further left for smaller screens */
-        bottom: 70px; /* Adjust bottom space for smaller screens */
-        max-width: 90%; /* Allow it to scale with the screen */
+      .gif-container {
+        width: 100px; /* Smaller GIF */
+        bottom: 15px; /* Adjust bottom spacing */
       }
 
       .paragraph {
-        font-size: 0.9em; /* Reduce font size for smaller screens */
-        padding: 12px; /* Adjust padding for smaller screens */
+        font-size: 0.9em; /* Smaller text */
+        padding: 12px;
       }
     }
 
-    /* Additional adjustments for very small screens */
+    /* Responsive adjustments for phones */
     @media (max-width: 480px) {
       h1 {
         font-size: 1.2em;
       }
 
+      .left-section {
+        bottom: 200px; /* Push it higher for small screens */
+        left: 20px; /* Adjust margin for smaller devices */
+      }
+
       .gif-container {
-        width: 80px;
+        width: 80px; /* Even smaller GIF */
+        bottom: 10px; /* Adjust bottom spacing */
       }
 
       .paragraph {
-        font-size: 0.8em;
-      }
-
-      .left-section {
-        left: 15px; /* Ensure it doesn’t touch the edge */
-        bottom: 100px; /* Adjust bottom for very small screens */
+        font-size: 0.8em; /* Smaller text */
       }
     }
   </style>
@@ -131,22 +128,26 @@
     <!-- Top-middle heading -->
     <h1>Welcome to my amazing web page</h1>
 
-    <!-- Circular image at the top-left corner -->
-
     <!-- Left-aligned section -->
     <div class="left-section">
       <div class="Zenith">Who Am I?</div>
       <div class="paragraph">
-        <p>I am a young moroccan muslim guy.
-          I'm learning web development especially with Python, HTML and CSS and of course the usage of git.
-         I talk three languagez and am starting the process of learning a fourth one.
-         The three that I already am capable of using are: Arabic, English and French
-         As for the one I'm learning it's Deutsch.
-         I'm really instersted in web design and graphic design.
-         I'm a mobile player.
-         I still don't have experience in the industrial world nor that I think I have the skill to do so. </p>
+        <p>I am a young Moroccan Muslim guy.
+          I'm learning web development especially with Python, HTML, and CSS and, of course, the usage of git.
+          I talk three languages and am starting the process of learning a fourth one.
+          The three that I already am capable of using are: Arabic, English, and French.
+          As for the one I'm learning, it's Deutsch.
+          I'm really interested in web design and graphic design.
+          I'm a mobile player.
+          I still don't have experience in the industrial world nor do I think I have the skill to do so.
+        </p>
       </div>
     </div>
 
-
-</body></html>
+    <!-- Bottom-center GIF -->
+    <div class="gif-container">
+      <img src="gif.gif" alt="Animated GIF">
+    </div>
+  </div>
+</body>
+</html>

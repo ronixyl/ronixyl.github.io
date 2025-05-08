@@ -6,17 +6,20 @@
   <title>My Amazing Web Page</title>
 
   <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com100..700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&display=swap" rel="stylesheet">
-
   <style>
     /* General body styling */
-    body {
-      background-color: black;
+    html, body {
+      height: 100%; /* Ensure full height for proper positioning */
       margin: 0;
       font-family: Arial, sans-serif;
       color: white;
+      background-color: black;
     }
 
     /* Container for layout */
@@ -24,8 +27,6 @@
       display: flex;
       flex-wrap: wrap; /* Allow wrapping for smaller screens */
       position: relative;
-      height: auto; /* Adjust height dynamically */
-      */
       padding: 20px;
     }
 
@@ -42,8 +43,10 @@
     /* Left-aligned section */
     .left-section {
       flex: 1 1 300px; /* Allow resizing with a minimum width */
+      margin-left:35px;
+      left:20px; 
       max-width: 350px; /* Ensure a maximum width */
-      margin-left: 20px; /* Add margin to the left */
+      margin-right: 20px; /* Add margin to the right */
       text-align: left;
     }
 
@@ -65,37 +68,27 @@
       max-width: 320px;
     }
 
-    /* Bottom-center GIF */
-    .gif-container {
-      position: absolute;
-      bottom: 20px; /* Align to the bottom of the page */
-      left: 50%; /* Center horizontally */
-      transform: translateX(-50%); /* Perfect horizontal centering */
+    /* Bottom-center container */
+    .bottom-center-container {
+      flex: 1 1 300px; /* Allow resizing with a minimum width */
+      display: flex;
+      flex-direction: column; /* Stack GIF and icons */
+      align-items: center; /* Center items horizontally */
+      gap: 15px; /* Add spacing between GIF and icons */
+      margin:auto;
+    }
+
+    /* GIF styling */
+    .gif-container img {
       width: 120px; /* Set GIF size */
       height: auto;
     }
 
-    .gif-container img {
-      width: 100%;
-      height: auto;
-    }
-
     /* Icon container styling */
-    .icon-container, .icon-container-2 {
-      display: flex;
-      flex-direction: column; /* Stack icons vertically */
-      gap: 20px;
-      align-items: center;
-      position: absolute; /* Position it relative to the GIF */
-      bottom: 20px; /* Align with the bottom of the GIF */
-    }
-
     .icon-container {
-      right: calc(50% + 80px); /* Position to the right of the GIF */
-    }
-
-    .icon-container-2 {
-      left: calc(50% + 80px); /* Position to the left of the GIF */
+      display: flex;
+      justify-content: center; /* Center icons horizontally */
+      gap: 20px; /* Space between icons */
     }
 
     .icon {
@@ -119,22 +112,20 @@
       }
 
       .left-section {
-        margin-left: 0; /* Remove left margin for smaller screens */
+        margin-right: 0; /* Remove right margin for smaller screens */
         text-align: center; /* Center the text */
         width: 100%; /* Make it take full width */
       }
 
-      .gif-container {
+      .bottom-center-container {
+        margin-top: 20px; /* Add spacing between sections */
+      }
+
+      .gif-container img {
         width: 100px; /* Smaller GIF */
       }
 
       .icon-container {
-        right: calc(50% + 60px);
-        gap: 15px;
-      }
-
-      .icon-container-2 {
-        left: calc(50% + 60px);
         gap: 15px;
       }
 
@@ -154,8 +145,12 @@
         height: 35px;
       }
 
-      .gif-container {
+      .gif-container img {
         width: 80px; /* Smaller GIF */
+      }
+
+      .icon-container {
+        gap: 10px; /* Reduce spacing between icons */
       }
     }
   </style>
@@ -181,33 +176,32 @@
       </div>
     </div>
 
-    <!-- Bottom-center GIF -->
-    <div class="gif-container">
-      <img src="gif.gif" alt="Animated GIF">
-    </div>
+    <!-- Bottom-center container -->
+    <div class="bottom-center-container">
+      <!-- Bottom-center GIF -->
+      <div class="gif-container">
+        <img src="gif.gif" alt="Animated GIF">
+      </div>
 
-    <!-- Icon container -->
-    <div class="icon-container">
-      <!-- GitHub Icon -->
-      <a href="https://github.com/ronixyl" target="_blank">
-        <img src="Wgithub.png" alt="GitHub Icon" class="icon">
-      </a>
-      <!-- Discord Icon -->
-      <a href="http://127.0.0.1:5500/ronixyl.github.io/discord.html" target="_blank">
-        <img src="white-discord.png" alt="Discord Icon" class="icon">
-      </a>
-    </div>
-
-    <!-- Icon container -->
-    <div class="icon-container-2">
-      <!-- Signal Icon -->
-      <a href="https://github.com/ronixyl" target="_blank">
-        <img src="signal.png" alt="Signal Icon" class="icon">
-      </a>
-      <!-- Mail Icon -->
-      <a href="http://127.0.0.1:5500/ronixyl.github.io/discord.html" target="_blank">
-        <img src="Wmail.png" alt="Mail Icon" class="icon">
-      </a>
+      <!-- Icon container -->
+      <div class="icon-container">
+        <!-- GitHub Icon -->
+        <a href="https://github.com/ronixyl" target="_blank">
+          <img src="Wgithub.png" alt="GitHub Icon" class="icon">
+        </a>
+        <!-- Discord Icon -->
+        <a href="http://127.0.0.1:5500/ronixyl.github.io/discord.html" target="_blank">
+          <img src="white-discord.png" alt="Discord Icon" class="icon">
+        </a>
+        <!-- Signal Icon -->
+        <a href="https://github.com/ronixyl" target="_blank">
+          <img src="signal.png" alt="Signal Icon" class="icon">
+        </a>
+        <!-- Mail Icon -->
+        <a href="http://127.0.0.1:5500/ronixyl.github.io/discord.html" target="_blank">
+          <img src="Wmail.png" alt="Mail Icon" class="icon">
+        </a>
+      </div>
     </div>
   </div>
 </body>

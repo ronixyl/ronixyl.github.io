@@ -79,6 +79,29 @@
       height: auto;
     }
 
+    /* Icon container styling */
+    .icon-container {
+      position: absolute; /* Position it close to the GIF */
+      bottom: 30px; /* Align with the bottom of the GIF */
+      left: calc(50% + 100px); /* Add margin to the right of the GIF */
+      display: flex;
+      flex-direction: column; /* Stack the icons vertically */
+      gap: 10px; /* Add small spacing between the icons */
+      align-items: center; /* Center the icons horizontally within their container */
+    }
+
+    .icon {
+      width: 40px; /* Size of the icon */
+      height: 40px;
+      border-radius: 50%; /* Make it circular if the image supports it */
+      transition: transform 0.3s ease; /* Smooth scaling effect */
+      cursor: pointer; /* Change cursor to pointer on hover */
+    }
+
+    .icon:hover {
+      transform: scale(1.2); /* Increase size to 120% */
+    }
+
     /* Responsive adjustments for tablets */
     @media (max-width: 768px) {
       h1 {
@@ -95,9 +118,14 @@
         bottom: 15px; /* Adjust bottom spacing */
       }
 
-      .paragraph {
-        font-size: 0.9em; /* Smaller text */
-        padding: 12px;
+      .icon-container {
+        left: calc(50% + 80px); /* Adjust position for smaller screens */
+        gap: 8px; /* Reduce spacing between icons */
+      }
+
+      .icon {
+        width: 35px; /* Smaller icons */
+        height: 35px;
       }
     }
 
@@ -117,8 +145,13 @@
         bottom: 10px; /* Adjust bottom spacing */
       }
 
-      .paragraph {
-        font-size: 0.8em; /* Smaller text */
+      .icon-container {
+        left: calc(50% + 70px); /* Adjust position for smaller screens */
+      }
+
+      .icon {
+        width: 30px; /* Even smaller icons */
+        height: 30px;
       }
     }
   </style>
@@ -147,6 +180,18 @@
     <!-- Bottom-center GIF -->
     <div class="gif-container">
       <img src="gif.gif" alt="Animated GIF">
+    </div>
+
+    <!-- Icon container -->
+    <div class="icon-container">
+      <!-- Icon 1 -->
+      <a href="https://github.com/ronixyl" target="_blank">
+        <img src="white-GitHub.png" alt="GitHub Icon" class="icon">
+      </a>
+      <!-- Icon 2 -->
+      <a href="http://127.0.0.1:5500/ronixyl.github.io/discord.html" target="_blank">
+        <img src="white-discord.png" alt="Discord Icon" class="icon">
+      </a>
     </div>
   </div>
 </body>

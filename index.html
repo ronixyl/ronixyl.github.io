@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Amazing Web Page</title>
+  <title>Ray me</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -80,7 +80,7 @@
     }
 
     /* GIF styling */
-    .gif-container img {
+    #gif-container img {
       width: 120px; /* Set GIF size */
       height: auto;
     }
@@ -122,7 +122,7 @@
         margin-top: 20px; /* Add spacing between sections */
       }
 
-      .gif-container img {
+      #gif-container img {
         width: 100px; /* Smaller GIF */
       }
 
@@ -146,7 +146,7 @@
         height: 35px;
       }
 
-      .gif-container img {
+      #gif-container img {
         width: 80px; /* Smaller GIF */
       }
 
@@ -159,7 +159,7 @@
 <body>
   <div id="container">
     <!-- Top-middle heading -->
-    <h1>Welcome to my amazing web page</h1>
+    <h1>Hello I'm Ray</h1>
 
     <!-- Left-aligned section -->
     <div class="left-section">
@@ -180,7 +180,7 @@
     <!-- Bottom-center container -->
     <div class="bottom-center-container">
       <!-- Bottom-center GIF -->
-      <div class="gif-container">
+      <div id="gif-container">
         <img src="gif.gif" alt="Animated GIF">
       </div>
 
@@ -199,11 +199,24 @@
           <img src="signal.png" alt="Signal Icon" class="icon">
         </a>
         <!-- Mail Icon -->
-        <a href="http://127.0.0.1:5500/ronixyl.github.io/discord.html" target="_blank">
+        <a href="https://ronixyl.github.io/e-mail/" target="_blank">
           <img src="Wmail.png" alt="Mail Icon" class="icon">
         </a>
       </div>
     </div>
   </div>
+  <script>
+        // JavaScript to count clicks and redirect
+        let clickCount = 0; // Initialize click counter
+        const gif = document.getElementById('gif-container'); // Get the GIF element
+
+        gif.addEventListener('click', () => {
+            clickCount++; // Increment click count
+            if (clickCount === 5) {
+                // Redirect to another page after 5 clicks
+                window.location.href = "https://ronixyl.github.io/credits/"; // Change URL to your desired page
+            }
+        });
+    </script>
 </body>
 </html>

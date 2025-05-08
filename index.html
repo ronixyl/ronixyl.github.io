@@ -82,24 +82,34 @@
     /* Icon container styling */
     .icon-container {
       position: absolute; /* Position it close to the GIF */
-      bottom: 30px; /* Align with the bottom of the GIF */
-      left: calc(50% + 100px); /* Add margin to the right of the GIF */
+      bottom: 20px; /* Align with the bottom of the GIF */
+      left: calc(50% + 80px); /* Keep it close to the GIF */
       display: flex;
       flex-direction: column; /* Stack the icons vertically */
-      gap: 10px; /* Add small spacing between the icons */
+      gap: 20px; /* Add more spacing between the icons */
+      align-items: center; /* Center the icons horizontally within their container */
+    }
+    .icon-container-2 {
+      position: absolute; /* Position it close to the GIF */
+      bottom: 20px; /* Align with the bottom of the GIF */
+      right: calc(50% + 80px); /* Keep it close to the GIF */
+      display: flex;
+      flex-direction: column; /* Stack the icons vertically */
+      gap: 20px; /* Add more spacing between the icons */
       align-items: center; /* Center the icons horizontally within their container */
     }
 
     .icon {
-      width: 40px; /* Size of the icon */
-      height: 40px;
-      border-radius: 50%; /* Make it circular if the image supports it */
-      transition: transform 0.3s ease; /* Smooth scaling effect */
+      width: 50px; /* Set consistent width for all icons */
+      height: 50px; /* Set consistent height for all icons */
+      border-radius: 50%; /* Optional: Make them circular if supported */
+      transition: transform 0.3s ease; /* Smooth scaling effect on hover */
       cursor: pointer; /* Change cursor to pointer on hover */
+      object-fit: cover; /* Ensure the image fills the size without distortion */
     }
 
     .icon:hover {
-      transform: scale(1.2); /* Increase size to 120% */
+      transform: scale(1.2); /* Increase size to 120% on hover */
     }
 
     /* Responsive adjustments for tablets */
@@ -119,13 +129,17 @@
       }
 
       .icon-container {
-        left: calc(50% + 80px); /* Adjust position for smaller screens */
-        gap: 8px; /* Reduce spacing between icons */
+        left: calc(50% + 60px); /* Adjust position for smaller screens */
+        gap: 15px; /* Slightly reduce spacing between icons */
+      }
+      .icon-container-2 {
+        right: calc(50% + 60px); /* Adjust position for smaller screens */
+        gap: 15px; /* Slightly reduce spacing between icons */
       }
 
       .icon {
-        width: 35px; /* Smaller icons */
-        height: 35px;
+        width: 40px; /* Smaller icon size */
+        height: 40px;
       }
     }
 
@@ -146,12 +160,17 @@
       }
 
       .icon-container {
-        left: calc(50% + 70px); /* Adjust position for smaller screens */
+        left: calc(50% + 50px); /* Adjust position for smaller screens */
+        gap: 12px; /* Reduce spacing between icons further */
+      }
+      .icon-container {
+        right: calc(50% + 50px); /* Adjust position for smaller screens */
+        gap: 12px; /* Reduce spacing between icons further */
       }
 
       .icon {
-        width: 30px; /* Even smaller icons */
-        height: 30px;
+        width: 35px; /* Even smaller icon size */
+        height: 35px;
       }
     }
   </style>
@@ -167,12 +186,12 @@
       <div class="paragraph">
         <p>I am a young Moroccan Muslim guy.
           I'm learning web development especially with Python, HTML, and CSS and, of course, the usage of git.
-          I speak three languagez and am starting the process of learning the fourth one.
+          I speak three languages and am starting the process of learning the fourth one.
           The three that I already am capable of using are: Arabic, English, and French.
           As for the one I'm learning, it's Deutsch.
           I'm really interested in web design and graphic design.
           I'm a mobile player.
-          I still don't have experience in the industrial world nor do I think I have the skill to do so.
+          I still don't have experience in the industrial world, nor do I think I have the skill to do so.
         </p>
       </div>
     </div>
@@ -184,15 +203,26 @@
 
     <!-- Icon container -->
     <div class="icon-container">
-      <!-- Icon 1 -->
+      <!-- GitHub Icon -->
       <a href="https://github.com/ronixyl" target="_blank">
-        <img src="white-GitHub.png" alt="GitHub Icon" class="icon">
+        <img src="Wgithub.png" alt="GitHub Icon" class="icon">
       </a>
-      <!-- Icon 2 -->
+      <!-- Discord Icon -->
       <a href="http://127.0.0.1:5500/ronixyl.github.io/discord.html" target="_blank">
         <img src="white-discord.png" alt="Discord Icon" class="icon">
       </a>
     </div>
+        <!-- Icon container -->
+        <div class="icon-container-2">
+          <!-- Signal Icon -->
+          <a href="https://github.com/ronixyl" target="_blank">
+            <img src="signal.png" alt="Signal Icon" class="icon">
+          </a>
+          <!-- Mail Icon -->
+          <a href="http://127.0.0.1:5500/ronixyl.github.io/discord.html" target="_blank">
+            <img src="Wmail.png" alt="Mail Icon" class="icon">
+          </a>
+        </div>
   </div>
 </body>
 </html>

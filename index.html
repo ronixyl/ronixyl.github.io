@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Amazing Web Page</title>
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&display=swap" rel="stylesheet">
+
   <style>
     /* General body styling */
     body {
@@ -16,7 +22,7 @@
 
     /* Container for layout */
     #container {
-      position: relative;
+      position: relative; /* Enable absolute positioning for child elements */
       height: 100vh; /* Full viewport height */
       width: 100%; /* Full width */
     }
@@ -30,23 +36,24 @@
       padding-top: 20px;
     }
 
-    /* Left-aligned section (Who Am I?) */
+    /* Left-aligned section */
     .left-section {
       position: absolute;
-      top: 80px; /* Keep it below the title to avoid collision */
-      left: 20px; /* Align to the left */
+      bottom: 20px; /* Lower the section */
+      left: 50px; /* Add margin to the left for better spacing */
       text-align: left;
       max-width: 350px; /* Slightly wider paragraph */
     }
 
     .Zenith {
-      font-family: Arial, sans-serif;
+      font-family: 'Playwrite RO', Arial, sans-serif;
       color: green;
       margin-bottom: 10px;
     }
 
+    /* Paragraph styling */
     .paragraph {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto Mono', Arial, sans-serif;
       color: white;
       margin: 0;
       padding: 15px;
@@ -59,11 +66,11 @@
 
     /* Bottom-center GIF */
     .gif-container {
-      position: absolute;
-      bottom: 40px; /* Add space above the bottom */
+      position: absolute; /* Position it within the container */
+      bottom: 20px; /* Proper bottom alignment */
       left: 50%; /* Center horizontally */
       transform: translateX(-50%); /* Perfect horizontal centering */
-      width: 120px; /* GIF size */
+      width: 120px; /* Smaller GIF size */
       height: auto;
     }
 
@@ -72,30 +79,29 @@
       height: auto;
     }
 
-    /* Icon containers */
+    /* Icon container styling */
     .icon-container {
-      position: absolute;
-      bottom: 40px; /* Align vertically with the GIF */
-      left: 20%; /* Position to the left of the GIF */
+      position: absolute; /* Position it close to the GIF */
+      bottom: 20px; /* Align with the bottom of the GIF */
+      left: calc(50% + 80px); /* Keep it close to the GIF */
       display: flex;
-      flex-direction: column; /* Stack icons vertically */
-      gap: 20px; /* Add space between icons */
-      align-items: center; /* Center the icons horizontally */
+      flex-direction: column; /* Stack the icons vertically */
+      gap: 20px; /* Add more spacing between the icons */
+      align-items: center; /* Center the icons horizontally within their container */
     }
-
     .icon-container-2 {
-      position: absolute;
-      bottom: 40px; /* Align vertically with the GIF */
-      right: 20%; /* Position to the right of the GIF */
+      position: absolute; /* Position it close to the GIF */
+      bottom: 20px; /* Align with the bottom of the GIF */
+      right: calc(50% + 80px); /* Keep it close to the GIF */
       display: flex;
-      flex-direction: column; /* Stack icons vertically */
-      gap: 20px; /* Add space between icons */
-      align-items: center; /* Center the icons horizontally */
+      flex-direction: column; /* Stack the icons vertically */
+      gap: 20px; /* Add more spacing between the icons */
+      align-items: center; /* Center the icons horizontally within their container */
     }
 
     .icon {
-      width: 50px; /* Set consistent width for icons */
-      height: 50px; /* Set consistent height for icons */
+      width: 50px; /* Set consistent width for all icons */
+      height: 50px; /* Set consistent height for all icons */
       border-radius: 50%; /* Optional: Make them circular if supported */
       transition: transform 0.3s ease; /* Smooth scaling effect on hover */
       cursor: pointer; /* Change cursor to pointer on hover */
@@ -113,12 +119,22 @@
       }
 
       .left-section {
-        top: 60px; /* Adjust spacing for smaller screens */
-        left: 15px; /* Reduce left margin */
+        bottom: 180px; /* Push it further up */
+        left: 30px; /* Slightly adjust left margin */
       }
 
       .gif-container {
         width: 100px; /* Smaller GIF */
+        bottom: 15px; /* Adjust bottom spacing */
+      }
+
+      .icon-container {
+        left: calc(70% + 60px); /* Adjust position for smaller screens */
+        gap: 15px; /* Slightly reduce spacing between icons */
+      }
+      .icon-container-2 {
+        right: calc(70% + 60px); /* Adjust position for smaller screens */
+        gap: 15px; /* Slightly reduce spacing between icons */
       }
 
       .icon {
@@ -134,24 +150,27 @@
       }
 
       .left-section {
-        position: relative; /* Change to relative positioning */
-        top: 0; /* Remove top positioning */
-        margin: 10px; /* Add spacing for mobile */
-        text-align: center; /* Center-align the text for mobile view */
+        bottom: 200px; /* Push it higher for small screens */
+        left: 20px; /* Adjust margin for smaller devices */
       }
 
       .gif-container {
         width: 80px; /* Even smaller GIF */
+        bottom: 10px; /* Adjust bottom spacing */
+      }
+
+      .icon-container {
+        left: calc(50% + 50px); /* Adjust position for smaller screens */
+        gap: 12px; /* Reduce spacing between icons further */
+      }
+      .icon-container {
+        right: calc(50% + 50px); /* Adjust position for smaller screens */
+        gap: 12px; /* Reduce spacing between icons further */
       }
 
       .icon {
-        width: 35px; /* Smaller icon size */
+        width: 35px; /* Even smaller icon size */
         height: 35px;
-      }
-
-      .icon-container,
-      .icon-container-2 {
-        bottom: 20px; /* Adjust for smaller screen height */
       }
     }
   </style>
@@ -182,7 +201,7 @@
       <img src="gif.gif" alt="Animated GIF">
     </div>
 
-    <!-- Left Icon container -->
+    <!-- Icon container -->
     <div class="icon-container">
       <!-- GitHub Icon -->
       <a href="https://github.com/ronixyl" target="_blank">
@@ -193,18 +212,17 @@
         <img src="white-discord.png" alt="Discord Icon" class="icon">
       </a>
     </div>
-
-    <!-- Right Icon container -->
-    <div class="icon-container-2">
-      <!-- Signal Icon -->
-      <a href="https://github.com/ronixyl" target="_blank">
-        <img src="signal.png" alt="Signal Icon" class="icon">
-      </a>
-      <!-- Mail Icon -->
-      <a href="http://127.0.0.1:5500/ronixyl.github.io/discord.html" target="_blank">
-        <img src="Wmail.png" alt="Mail Icon" class="icon">
-      </a>
-    </div>
+        <!-- Icon container -->
+        <div class="icon-container-2">
+          <!-- Signal Icon -->
+          <a href="https://github.com/ronixyl" target="_blank">
+            <img src="signal.png" alt="Signal Icon" class="icon">
+          </a>
+          <!-- Mail Icon -->
+          <a href="http://127.0.0.1:5500/ronixyl.github.io/discord.html" target="_blank">
+            <img src="Wmail.png" alt="Mail Icon" class="icon">
+          </a>
+        </div>
   </div>
 </body>
 </html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Amazing Web Page</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com100..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&display=swap" rel="stylesheet">
+
+  <style>
+    /* General body styling */
+    body {
+      background-color: black;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    /* Container for layout */
+    #container {
+      display: flex;
+      flex-wrap: wrap; /* Allow wrapping for smaller screens */
+      position: relative;
+      height: auto; /* Adjust height dynamically */
+      */
+      padding: 20px;
+    }
+
+    /* Top-middle heading */
+    h1 {
+      color: crimson;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0 auto; /* Center the heading */
+      width: 100%; /* Full width */
+      padding-top: 20px;
+    }
+
+    /* Left-aligned section */
+    .left-section {
+      flex: 1 1 300px; /* Allow resizing with a minimum width */
+      max-width: 350px; /* Ensure a maximum width */
+      margin-left: 20px; /* Add margin to the left */
+      text-align: left;
+    }
+
+    .Zenith {
+      font-family: 'Playwrite RO', Arial, sans-serif;
+      color: green;
+      margin-bottom: 10px;
+    }
+
+    /* Paragraph styling */
+    .paragraph {
+      font-family: 'Roboto Mono', Arial, sans-serif;
+      color: white;
+      margin: 0;
+      padding: 15px;
+      border: 3px dashed white;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    /* Bottom-center GIF */
+    .gif-container {
+      position: absolute;
+      bottom: 20px; /* Align to the bottom of the page */
+      left: 50%; /* Center horizontally */
+      transform: translateX(-50%); /* Perfect horizontal centering */
+      width: 120px; /* Set GIF size */
+      height: auto;
+    }
+
+    .gif-container img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Icon container styling */
+    .icon-container, .icon-container-2 {
+      display: flex;
+      flex-direction: column; /* Stack icons vertically */
+      gap: 20px;
+      align-items: center;
+      position: absolute; /* Position it relative to the GIF */
+      bottom: 20px; /* Align with the bottom of the GIF */
+    }
+
+    .icon-container {
+      right: calc(50% + 80px); /* Position to the right of the GIF */
+    }
+
+    .icon-container-2 {
+      left: calc(50% + 80px); /* Position to the left of the GIF */
+    }
+
+    .icon {
+      width: 50px; /* Set consistent icon size */
+      height: 50px;
+      border-radius: 50%; /* Make them circular */
+      transition: transform 0.3s ease; /* Smooth scaling effect on hover */
+      cursor: pointer; /* Change cursor to pointer on hover */
+      object-fit: cover; /* Ensure the image fills the size without distortion */
+    }
+
+    .icon:hover {
+      transform: scale(1.2); /* Increase size to 120% on hover */
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 768px) {
+      #container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+      }
+
+      .left-section {
+        margin-left: 0; /* Remove left margin for smaller screens */
+        text-align: center; /* Center the text */
+        width: 100%; /* Make it take full width */
+      }
+
+      .gif-container {
+        width: 100px; /* Smaller GIF */
+      }
+
+      .icon-container {
+        right: calc(50% + 60px);
+        gap: 15px;
+      }
+
+      .icon-container-2 {
+        left: calc(50% + 60px);
+        gap: 15px;
+      }
+
+      .icon {
+        width: 40px; /* Smaller icon size */
+        height: 40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.2em; /* Reduce heading size */
+      }
+
+      .icon {
+        width: 35px; /* Smaller icon size */
+        height: 35px;
+      }
+
+      .gif-container {
+        width: 80px; /* Smaller GIF */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <!-- Top-middle heading -->
+    <h1>Welcome to my amazing web page</h1>
+
+    <!-- Left-aligned section -->
+    <div class="left-section">
+      <div class="Zenith">Who Am I?</div>
+      <div class="paragraph">
+        <p>I am a young Moroccan Muslim guy.
+          I'm learning web development especially with Python, HTML, and CSS and, of course, the usage of git.
+          I speak three languages and am starting the process of learning the fourth one.
+          The three that I already am capable of using are: Arabic, English, and French.
+          As for the one I'm learning, it's Deutsch.
+          I'm really interested in web design and graphic design.
+          I'm a mobile player.
+          I still don't have experience in the industrial world, nor do I think I have the skill to do so.
+        </p>
+      </div>
+    </div>
+
+    <!-- Bottom-center GIF -->
+    <div class="gif-container">
+      <img src="gif.gif" alt="Animated GIF">
+    </div>
+
+    <!-- Icon container -->
+    <div class="icon-container">
+      <!-- GitHub Icon -->
+      <a href="https://github.com/ronixyl" target="_blank">
+        <img src="Wgithub.png" alt="GitHub Icon" class="icon">
+      </a>
+      <!-- Discord Icon -->
+      <a href="http://127.0.0.1:5500/ronixyl.github.io/discord.html" target="_blank">
+        <img src="white-discord.png" alt="Discord Icon" class="icon">
+      </a>
+    </div>
+
+    <!-- Icon container -->
+    <div class="icon-container-2">
+      <!-- Signal Icon -->
+      <a href="https://github.com/ronixyl" target="_blank">
+        <img src="signal.png" alt="Signal Icon" class="icon">
+      </a>
+      <!-- Mail Icon -->
+      <a href="http://127.0.0.1:5500/ronixyl.github.io/discord.html" target="_blank">
+        <img src="Wmail.png" alt="Mail Icon" class="icon">
+      </a>
+    </div>
+  </div>
+</body>
+</html>

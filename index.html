@@ -11,20 +11,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&display=swap" rel="stylesheet">
 
-  <style>
-    /* General body styling */
-    body {
-      background-color: black;
-      margin: 0;
-      font-family: Arial, sans-serif;
+  <, sans-serif;
       color: white;
     }
 
     /* Container for layout */
     #container {
-      position: relative; /* Enable absolute positioning for child elements */
-      height: 100vh; /* Full viewport height */
-      width: 100%; /* Full width */
+      display: flex;
+      flex-wrap: nowrap; /* Default: Keep items side-by-side */
+      gap: 20px;
+      padding: 20px;
     }
 
     /* Top-middle heading */
@@ -32,17 +28,14 @@
       color: crimson;
       font-family: Arial, sans-serif;
       text-align: center;
+      width: 100%; /* Makes the heading span the full width */
       margin: 0;
       padding-top: 20px;
     }
 
     /* Left-aligned section */
     .left-section {
-      position: absolute;
-      top: 80px; /* Ensure it stays below the h1 */
-      left: 20px; /* Add margin to the left for better spacing */
-      text-align: left;
-      max-width: 350px; /* Slightly wider paragraph */
+      max-width: 350px; /* Restrict maximum width */
     }
 
     .Zenith {
@@ -61,16 +54,21 @@
       display: inline-block;
       box-sizing: border-box;
       width: 100%; /* Make it responsive */
-      max-width: 320px; /* Wider for better readability */
+      max-width: 320px;
+    }
+
+    /* GIF and icons container */
+    .gif-icons-container {
+      flex: 1 1 300px; /* Allow resizing and set a base size */
+      display: flex;
+      flex-direction: column; /* Stack GIF and icons vertically */
+      align-items: center;
+      gap: 20px;
     }
 
     /* Bottom-center GIF */
     .gif-container {
-      position: absolute; /* Position it within the container */
-      bottom: 20px; /* Proper bottom alignment */
-      left: 50%; /* Center horizontally */
-      transform: translateX(-50%); /* Perfect horizontal centering */
-      width: 120px; /* Smaller GIF size */
+      width: 120px; /* Set GIF size */
       height: auto;
     }
 
@@ -80,30 +78,17 @@
     }
 
     /* Icon container styling */
-    .icon-container {
-      position: absolute; /* Position it relative to the GIF */
-      bottom: 70px; /* Add spacing above the GIF */
-      left: calc(50% - 160px); /* Position to the left of the GIF */
+    .icon-container, .icon-container-2 {
       display: flex;
-      flex-direction: column; /* Stack the icons vertically */
-      gap: 20px; /* Add more spacing between the icons */
-      align-items: center; /* Center the icons horizontally within their container */
-    }
-
-    .icon-container-2 {
-      position: absolute; /* Position it relative to the GIF */
-      bottom: 70px; /* Add spacing above the GIF */
-      right: calc(50% - 160px); /* Position to the right of the GIF */
-      display: flex;
-      flex-direction: column; /* Stack the icons vertically */
-      gap: 20px; /* Add more spacing between the icons */
-      align-items: center; /* Center the icons horizontally within their container */
+      flex-direction: column; /* Stack icons vertically */
+      gap: 20px;
+      align-items: center; /* Center icons horizontally */
     }
 
     .icon {
-      width: 50px; /* Set consistent width for all icons */
-      height: 50px; /* Set consistent height for all icons */
-      border-radius: 50%; /* Optional: Make them circular if supported */
+      width: 50px; /* Set consistent icon size */
+      height: 50px;
+      border-radius: 50%; /* Make them circular */
       transition: transform 0.3s ease; /* Smooth scaling effect on hover */
       cursor: pointer; /* Change cursor to pointer on hover */
       object-fit: cover; /* Ensure the image fills the size without distortion */
@@ -113,83 +98,20 @@
       transform: scale(1.2); /* Increase size to 120% on hover */
     }
 
-    /* Responsive adjustments for tablets */
+    /* Media query: Adjust layout for smaller screens */
     @media (max-width: 768px) {
-      h1 {
-        font-size: 1.5em;
+      #container {
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
       }
 
-      .left-section {
-        top: 60px; /* Push it closer to the top */
-        left: 15px; /* Reduce left margin */
-      }
-
-      .gif-container {
-        width: 100px; /* Smaller GIF */
-        bottom: 15px; /* Adjust bottom spacing */
-      }
-
-      .icon-container {
-        left: calc(50% - 120px); /* Adjust position for smaller screens */
-        bottom: 50px; /* Add spacing above the GIF */
-        gap: 15px; /* Slightly reduce spacing between icons */
-      }
-
-      .icon-container-2 {
-        right: calc(50% - 120px); /* Adjust position for smaller screens */
-        bottom: 50px; /* Add spacing above the GIF */
-        gap: 15px; /* Slightly reduce spacing between icons */
-      }
-
-      .icon {
-        width: 40px; /* Smaller icon size */
-        height: 40px;
-      }
-    }
-
-    /* Responsive adjustments for phones */
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.2em;
-      }
-
-      .left-section {
-        top: 40px; /* Push it higher for small screens */
-        left: 10px; /* Adjust margin for smaller devices */
-      }
-
-      .gif-container {
-        width: 80px; /* Even smaller GIF */
-        bottom: 10px; /* Adjust bottom spacing */
-      }
-
-      .icon-container {
-        left: calc(50% - 100px); /* Adjust position for smaller screens */
-        bottom: 40px; /* Add more spacing */
-        gap: 12px; /* Reduce spacing between icons further */
-      }
-
-      .icon-container-2 {
-        right: calc(50% - 100px); /* Adjust position for smaller screens */
-        bottom: 40px; /* Add more spacing */
-        gap: 12px; /* Reduce spacing between icons further */
-      }
-
-      .icon {
-        width: 35px; /* Even smaller icon size */
-        height: 35px;
+      .gif-icons-container {
+        flex: 1 1 100%; /* Take full width below left-section */
       }
     }
   </style>
 </head>
 <body>
-  <div id="container">
-    <!-- Top-middle heading -->
-    <h1>Welcome to my amazing web page</h1>
-
-    <!-- Left-aligned section -->
-    <div class="left-section">
-      <div class="Zenith">Who Am I?</div>
+ >
       <div class="paragraph">
         <p>I am a young Moroccan Muslim guy.
           I'm learning web development especially with Python, HTML, and CSS and, of course, the usage of git.
@@ -198,38 +120,23 @@
           As for the one I'm learning, it's Deutsch.
           I'm really interested in web design and graphic design.
           I'm a mobile player.
-          I still don't have experience in the industrial world, nor do I think I have the skill to do so.
-        </p>
+ hrefhttps://github.com/ronixyl" target="_blank">
+          <img src="Wgithub.png" alt=".io/discord.html" target="_blank">
+          <img src="white-discord.png" alt="Discord Icon" class="icon">
+        </a>
       </div>
-    </div>
 
-    <!-- Bottom-center GIF -->
-    <div class="gif-container">
-      <img src="gif.gif" alt="Animated GIF">
-    </div>
-
-    <!-- Icon container -->
-    <div class="icon-container">
-      <!-- GitHub Icon -->
-      <a href="https://github.com/ronixyl" target="_blank">
-        <img src="Wgithub.png" alt="GitHub Icon" class="icon">
-      </a>
-      <!-- Discord Icon -->
-      <a href="http://127.0.0.1:5500/ronixyl.github.io/discord.html" target="_blank">
-        <img src="white-discord.png" alt="Discord Icon" class="icon">
-      </a>
-    </div>
-
-    <!-- Icon container -->
-    <div class="icon-container-2">
-      <!-- Signal Icon -->
-      <a href="https://github.com/ronixyl" target="_blank">
-        <img src="signal.png" alt="Signal Icon" class="icon">
-      </a>
-      <!-- Mail Icon -->
-      <a href="http://127.0.0.1:5500/ronixyl.github.io/discord.html" target="_blank">
-        <img src="Wmail.png" alt="Mail Icon" class="icon">
-      </a>
+      <!-- Icon container -->
+      <div class="icon-container-2">
+        <!-- Signal Icon -->
+        <a href="https://github.com/ronixyl" target="_blank">
+          <img src="signal.png" alt="Signal Icon" class="icon">
+        </a>
+        <!-- Mail Icon -->
+        <a href="http://127.0.0.1:5500/ronixyl.github.io/discord.html" target="_blank">
+          <img src="Wmail.png" alt="Mail Icon" class="icon">
+        </a>
+      </div>
     </div>
   </div>
 </body>

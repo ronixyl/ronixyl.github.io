@@ -32,7 +32,7 @@
     }
 
     /* Top-middle heading */
-    h1 {
+     h1{
       color: crimson;
       font-family: Arial, sans-serif;
       text-align: center;
@@ -105,6 +105,20 @@
       transform: scale(1.2); /* Increase size to 120% on hover */
     }
 
+.cursor {
+  font-size: 1em; /* Match the size of capital letters */
+  color: lightgrey; /* Set the cursor color */
+  line-height: 1; /* Ensure it's aligned properly with capital letters */
+  animation: blinkCursor 1s step-end infinite; /* Slower blinking effect */
+  font-weight:bold; /* Make the cursor bold */
+}
+
+@keyframes blinkCursor {
+  50% {
+    opacity: 0; /* Makes the cursor disappear halfway through the animation */
+  }
+}
+
     /* Responsive adjustments for smaller screens */
     @media (max-width: 768px) {
       #container {
@@ -138,7 +152,7 @@
 
     @media (max-width: 480px) {
       h1 {
-        font-size: 1.2em; /* Reduce heading size */
+        font-size: 1.5em; /* Reduce heading size */
       }
 
       .icon {
@@ -159,7 +173,10 @@
 <body>
   <div id="container">
     <!-- Top-middle heading -->
-    <h1>Hello I'm Ray</h1>
+<!-- With this dynamic heading -->
+    <h1 style="text-align: center; font-family: Arial, sans-serif; color: crimson; margin: 0 auto; width: 100%; padding-top: 20px; font-weight: bold;">
+      Hello I'm <span id="title-span">Ray</span><span class="cursor" style="color: lightgrey;">|</span>
+    </h1>
 
     <!-- Left-aligned section -->
     <div class="left-section">
@@ -195,7 +212,7 @@
           <img src="white-discord.png" alt="Discord Icon" class="icon">
         </a>
         <!-- Signal Icon -->
-        <a href="https://github.com/ronixyl" target="_blank">
+        <a href="https://ronixyl.github.io/signal/" target="_blank">
           <img src="signal.png" alt="Signal Icon" class="icon">
         </a>
         <!-- Mail Icon -->
@@ -218,5 +235,49 @@
             }
         });
     </script>
+<script>
+  // Array of text to cycle through
+  const titles = ["Ray", "a Developer", "a Designer", "a Learner"];
+  const titleSpan = document.getElementById("title-span");
+  const cursorSpan = document.querySelector(".cursor");
+  let titleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  // Typing effect function
+  function typeEffect() {
+    const currentTitle = titles[titleIndex];
+    const visibleText = currentTitle.slice(0, charIndex);
+
+    titleSpan.textContent = visibleText;
+
+    if (!isDeleting && charIndex < currentTitle.length) {
+      charIndex++;
+      setTimeout(typeEffect, 150); // Typing speed
+    } else if (isDeleting && charIndex > 0) {
+      charIndex--;
+      setTimeout(typeEffect, 100); // Deleting speed
+    } else if (!isDeleting && charIndex === currentTitle.length) {
+      isDeleting = true;
+      setTimeout(typeEffect, 1500); // Pause before deleting
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      titleIndex = (titleIndex + 1) % titles.length; // Move to the next title
+      setTimeout(typeEffect, 750); // Pause before typing the next title
+    }
+  }
+
+  // Blinking cursor animation
+  setInterval(() => {
+    cursorSpan.style.opacity = cursorSpan.style.opacity === "0" ? "1" : "0";
+  }, 500);
+  // Blinking cursor animation
+  setInterval(() => {
+    cursorSpan.style.opacity = cursorSpan.style.opacity === "0" ? "1" : "0";
+  }, 500);
+
+  // Start the typing effect
+  typeEffect();
+</script>
 </body>
 </html>
